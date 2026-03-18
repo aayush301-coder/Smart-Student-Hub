@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Student Hub</title>
+    <link rel="stylesheet" href="hub.css">
+</head>
+<body>
+    <header>
+        <h1>Student Hub</h1>
+    </header>
+
+    <main>
+        <section id="add-resources">
+            <form id="resources-form">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="e.g. Java Notes" required>
+
+                <label for="link">Resource Link</label>
+                <input type="url" id="link" placeholder="e.g. https://example.com" required>
+
+                <label for="category">Category</label>
+                <select id="category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="DSA">DSA</option>
+                    <option value="Development">Development</option>
+                    <option value="Academics">Academics</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button type="submit" id="add-btn">Add</button>
+            </form>
+        </section>
+
+        <section id="search-filter">
+            <label for="search-input">Search by Title</label>
+            <input type="text" id="search-input" placeholder="Search...">
+
+            <select id="filter">
+                <option value="All">All</option>
+                <option value="DSA">DSA</option>
+                <option value="Development">Development</option>
+                <option value="Academics">Academics</option>
+                <option value="Other">Other</option>
+            </select>
+        </section>
+
+        <section id="resources-container">
+
+        </section>
+    </main>
+    <script src="hub.js"></script>   
+</body>
+</html>
