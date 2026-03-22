@@ -6,6 +6,8 @@ const linkInput = document.getElementById("link");
 const categoryInput = document.getElementById("category");
 const container = document.getElementById("resources-container");
 
+
+
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -26,6 +28,8 @@ form.addEventListener("submit", function (e) {
     renderResources();
 });
 
+
+
 function renderResources() {
     container.innerHTML = "";
     resources.forEach(function(item) {
@@ -35,8 +39,24 @@ function renderResources() {
             <h3>${item.title}</h3>
             <a href="${item.link}" target="_blank">Open</a>
             <p>${item.category}</p>
+            <button class="delete-btn" data-id="${item.id}">Delete</button>
         `;
 
         container.appendChild(div);
+
+        const deleteBtn = div.querySelector(".delete-btn");
+
+        deleteBtn.addEventListener("click", function () {
+            const id = item.id;
+
+            resources = resources.filter(function (res) {
+                return res.id !== id;
+            });
+
+            renderResources();
+        });
     });
 }
+
+
+
